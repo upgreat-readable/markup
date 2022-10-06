@@ -75,7 +75,11 @@ const MarkupServicePage: FC = observer(() => {
             </div>
 
             <div className="markup-service__link">
-                <a href="https://ai.upgreat.one/" target="_blank">
+                <a
+                    href="https://ai.upgreat.one/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     ai.upgreat.one
                 </a>
             </div>

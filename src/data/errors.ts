@@ -1,5 +1,4 @@
 import { MenuCategory } from '../domain/markup/entities/menu/menu.interface';
-import { subjects } from 'types/markup';
 
 export default {
     rus: [

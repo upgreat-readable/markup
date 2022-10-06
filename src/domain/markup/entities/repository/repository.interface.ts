@@ -1,4 +1,3 @@
-import { AxiosResponse } from 'axios';
 import { MarkupData, Meta } from 'types/markup';
 import { IMarkupService } from '../service/service.interface';
 import { IMenuData } from '../menu/menu.interface';
