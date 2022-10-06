@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
-    <g fill="none" fill-rule="evenodd" stroke-width="2">
-        <path stroke="#74C8DA" d="M44 18h-6v-3h-9v15h-6V15h-9v3H8V9h36v9z" transform="translate(1 1)"/>
-        <path stroke="#F59B00" d="M22 34L30 34M3 30L49 30M22 38L30 38M20 42L32 42M20 46L32 46" transform="translate(1 1)"/>
-        <path stroke="#74C8DA" d="M0 8L0 0 8 0M44 0L52 0 52 8M8 52L0 52 0 44M52 44L52 52 44 52" transform="translate(1 1)"/>
-    </g>
-</svg>

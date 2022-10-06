@@ -1,5 +1,5 @@
 import Selection from '../selection/Selection';
-import { Markup } from 'readable.io_markup/markup/build/markup';
+import { Markup } from 'domain/markup/services/MarkupPackage/markup';
 import { MarkupData } from 'types/markup';
 import {
     ErrorClassification,
@@ -36,6 +36,7 @@ export interface IMarkupService {
     selection: Selection | undefined;
     markupSelections: ISelection[];
     disabledSelections: Array<number>;
+    // @ts-ignore
     markup: ReturnType<Markup>;
     renderer: IMarkupRenderer;
     badges: IBadgesEntity;

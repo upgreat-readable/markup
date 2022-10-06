@@ -16,7 +16,7 @@ import {
     ISelection,
     Status,
 } from '../selection/selection.interface';
-import { Markup } from 'readable.io_markup/markup/build/markup';
+import { Markup } from 'domain/markup/services/MarkupPackage/markup';
 import { action, computed, observable } from 'mobx';
 import { computedFn } from 'mobx-utils';
 import Selection from '../selection/Selection';
@@ -34,6 +34,7 @@ export class MarkupService implements IMarkupService {
     @observable
     public isInitialized: boolean = false;
 
+    // @ts-ignore
     public markup: ReturnType<Markup>;
 
     public badges: IBadgesEntity;
