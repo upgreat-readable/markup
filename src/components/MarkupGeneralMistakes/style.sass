@@ -1,0 +1,108 @@
+@import '_config'
+
+.general-mistakes
+	max-width: 864px
+	padding: 30px 60px
+	border-bottom: 1px solid #e1e1e1
+	box-shadow: 0 0 10px 0 rgba(217, 226, 235, 0.5)
+	+max-width(1600)
+		max-width: 60%
+		padding: 30px 40px
+	&__body
+		display: flex
+		margin-left: -20px
+		margin-right: -20px
+		flex-flow: wrap row
+	&__col
+		flex: 0 0 50%
+		max-width: 50%
+		padding: 0 20px
+		display: flex
+		flex-flow: wrap row
+		align-items: center
+		+max-width(1600)
+			flex: 0 0 100%
+			max-width: 100%
+	&__title
+		font: bold 10px/150% $font
+		color: #3c3f48
+		text-transform: uppercase
+
+	&__container
+		position: relative
+		display: flex
+		align-items: center
+		margin: 0 10px 5px 0
+	&__items
+		position: relative
+		overflow: hidden
+		&.opacity
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				height: 100%
+				width: 100%
+				background: #FFFFFF
+				z-index: 1
+				opacity: .5
+
+.general-mistakes-item
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	padding: 3px
+	border-radius: 2px
+	border: solid 1px #f15454
+	background-color: #ffffff
+	text-transform: uppercase
+	color: #f15454
+	transition: .4s
+	cursor: pointer
+	position: relative
+	margin-bottom: 5px
+
+	&.active
+		color: #ffffff
+		background-color: #f15454
+
+	&.focused
+		color: #ffffff
+		background-color: #f15454
+		z-index: 2
+
+	&.disabled
+		pointer-events: none
+		background-color: #bcc3c9
+		border: solid 1px #bcc3c9
+
+	&:not(:last-child)
+		margin-right: 8px
+
+	&:hover
+		.general-mistakes-item__desc
+			display: block
+
+	&:hover:not(.active):not(.focused)
+		color: #f15454
+		background-color: #ffebeb
+
+	&__title
+		font: normal 10px/100% $font
+
+	&__desc
+		text-transform: none
+		transition: .3s ease
+		display: none
+		position: absolute
+		z-index: 1
+		background: $bg-light
+		padding: 10px
+		border-radius: 4px
+		font: normal 11px/120% $font
+		color: $color
+		bottom: calc(100% + 10px)
+		left: 0
+		max-width: 220px
+		width: max-content

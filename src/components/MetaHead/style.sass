@@ -1,0 +1,47 @@
+@import '_config'
+
+.meta-head
+	display: flex
+	flex-direction: column
+	max-width: $width-page
+
+	$titleSm: #{&}--title-sm
+	+max-width($big-desktop)
+		width: 60%
+		font: normal 14px/150% $font
+
+	&__theme
+		font: bold 10px/100% $font
+		color: #959fa1
+		margin-bottom: 8px
+		text-transform: uppercase
+		letter-spacing: 1px
+		#{$titleSm} &
+			font: normal 14px/125% $systemFont
+			text-transform: none
+			color: $color
+			margin-bottom: 4px
+
+			&:after
+				content: ':'
+
+
+	&__title
+		font: normal 28px/129% $font
+		color: $color
+		margin-bottom: 20px
+		#{$titleSm} &
+			font-size: 16px
+			font-weight: 500
+			line-height: 150%
+
+
+	&__info
+		display: flex
+		margin-bottom: 20px
+
+
+	&__param
+		font: normal 14px/100% $font
+		color: $color
+		margin: 0 32px 0 0

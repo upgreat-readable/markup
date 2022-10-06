@@ -1,0 +1,322 @@
+@import '_config'
+
+.markup-menu, .correction
+	max-width: 304px
+	max-height: 670px
+	overflow-y: auto
+	width: 100%
+	top: 100px
+	position: sticky
+	margin-left: auto
+	background: $bg
+	+max-width($big-desktop)
+		right: 30px
+
+	::-webkit-scrollbar
+		width: 4px
+
+	::-webkit-scrollbar-track
+		background-color: #e4ebef
+		border-radius: 2.5px
+
+	::-webkit-scrollbar-thumb
+		border-radius: 2.5px
+		background-color: #bcc5cc
+
+	&__head
+		padding: 0 0 16px
+
+	&__title
+		font: 500 24px/133% $font
+		color: $color
+		margin: 0 0 20px
+
+	&__search-wrap
+		position: relative
+		span
+			cursor: pointer
+			display: block
+			font: normal 10px/100% $font
+			text-transform: uppercase
+			position: absolute
+			height: fit-content
+			right: 12px
+			color: #f15454
+			top: 0
+			bottom: 0
+			margin: auto
+
+	&__search
+		background: #ffffff
+		width: 100%
+		height: 40px
+		border-radius: 3px
+		border: solid 1px #d6dbde
+		padding: 12px
+		font: normal 14px/100% $font
+		color: $color
+		+placeholder
+			color: #cad1d6
+
+	&__body
+		border-top: 1px solid #c1ccd4
+		border-bottom: 1px solid #c1ccd4
+		overflow-y: auto
+		min-height: 200px
+		max-height: 470px
+
+	&__level
+		padding: 12px 0 12px 30px
+		border-bottom: 1px solid #e5ebef
+
+		&-title
+			position: relative
+			text-transform: uppercase
+			font: 500 16px/150% $font
+			color: $color
+			cursor: pointer
+			padding-top: 2px
+
+			&:before
+				content: ''
+				position: absolute
+				left: -20px
+				top: 0
+				bottom: 0
+				margin: auto
+				display: flex
+				width: 12px
+				height: 8px
+				background: url('../../assets/img/svg/caret-big.svg') no-repeat center / contain
+				transform: rotate(-90deg)
+
+			&.open:before
+				transform: rotate(0deg)
+
+	&__sublevel
+		padding: 0 30px 0 10px
+		margin: 12px 0
+
+		&-title
+			position: relative
+			text-transform: uppercase
+			font: 500 10px/100% $font
+			color: $color
+			cursor: pointer
+			&:before
+				content: ''
+				position: absolute
+				left: -10px
+				top: 0
+				display: flex
+				width: 5px
+				height: 8px
+				background: url('../../assets/img/svg/caret-small.svg') no-repeat center / contain
+
+			&.open:before
+				transform: rotate(90deg)
+
+		&-body
+			margin: 5px 0
+
+		&-option
+			position: relative
+			font: normal 12px/175% $font
+			color: $blue-menu
+
+			&:hover
+				.markup-menu__sublevel-desc
+					display: block
+
+			&--filter
+				padding-left: 12px
+				margin: 5px 0
+
+		&-label
+			cursor: pointer
+			transition: .2s ease
+			width: fit-content
+
+			&:hover
+				color: $hover-orange
+
+		&-desc
+			transition: .3s ease
+			display: none
+			position: absolute
+			z-index: 1
+			background: $bg-light
+			padding: 10px
+			border-radius: 4px
+			font: normal 11px/120% $font
+			color: $color
+			left: 20px
+			max-width: 220px
+			width: 100%
+		&-comment
+			font: normal italic 11px/130% $font
+			color: $color
+	&__nothing
+		display: block
+		font: normal 12px/100% $font
+		padding: 0 12px
+		margin-top: 15px
+		color: $color
+
+
+.correction
+	height: fit-content
+	border-radius: 4px
+	background: $bg-light
+	padding: 15px 20px 20px
+
+	&::-webkit-scrollbar
+		width: 4px
+
+	&::-webkit-scrollbar-track
+		background-color: #e4ebef
+		border-radius: 2.5px
+
+	&::-webkit-scrollbar-thumb
+		border-radius: 2.5px
+		background-color: #bcc5cc
+
+
+	&__title
+		font: 500 20px/160% $font
+		color: $color
+		margin-bottom: 9px
+
+	&__desc
+		font: normal 14px/143% $font
+		color: $color
+		margin-bottom: 12px
+		white-space: pre-line
+		span
+			color: #ed4c4c
+
+	&__close
+		cursor: pointer
+		display: block
+		position: absolute
+		background: url('../../assets/img/svg/cross.svg') no-repeat center / contain
+		width: 11px
+		height: 11px
+		right: 12px
+
+	&__title
+		display: flex
+		align-items: center
+		margin-bottom: 5px
+
+	&__label
+		font: normal 9px/100% $font
+		text-transform: uppercase
+		color: $color
+		letter-spacing: 1px
+
+	&__group
+		margin-bottom: 12px
+		position: relative
+		&--red
+			&:before
+				content: ''
+				display: block
+				height: 36px
+				width: 3px
+				background: #f15454
+				position: absolute
+				bottom: 0
+
+	&__input
+		width: 100%
+		height: 36px
+		background: #ffffff
+		border-radius: 2px
+		padding: 5px 10px
+		font: normal 12px/100% $font
+		color: $color
+		border: solid 1px #e2e1da
+
+	&__connect
+		display: flex
+		align-items: center
+		margin: 16px 0
+		text-transform: uppercase
+		font: bold 9px/100% $font
+		color: $color
+		cursor: pointer
+		letter-spacing: 0.5px
+		i
+			display: block
+			width: 9px
+			height: 10px
+			margin-right: 5px
+			background: url('../../assets/img/svg/connect.svg') no-repeat center / contain
+
+	&__save
+		font: 500 14px/229% $font
+		text-transform: uppercase
+		letter-spacing: 0.5px
+		background: $blue-menu
+		color: #0b2326
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 44px
+		border-radius: 2px
+		cursor: pointer
+		transition: .3s ease
+		&:hover
+			opacity: .8
+
+	&__value
+		font: normal 14px/143% $font
+		color: $color
+		margin-top: 4px
+		word-break: break-word
+
+	&__panel
+		display: flex
+		justify-content: space-between
+		margin-top: 20px
+		.correction__cancel
+			margin: 0
+
+	&__edit
+		text-transform: uppercase
+		color: #43bbce
+		letter-spacing: 1px
+		font: normal 9px/100% $font
+		cursor: pointer
+		transition: .3s ease
+		&:hover
+			opacity: 0.8
+
+	&__cancel
+		text-transform: uppercase
+		font: normal 9px/100% $font
+		letter-spacing: 1px
+		color: #ed4c4c
+		text-align: center
+		margin-top: 20px
+		cursor: pointer
+
+.correction-select
+	&__title
+		font: normal 14px/143% $font
+		color: #f15454
+	&__desc
+		font: normal 11px/150% $font
+		color: #798991
+.correction-sel
+	&__indicator-separator
+		display: none !important
+	&__control
+		border-radius: 2px
+		border-color: #e2e1da
+	&__option--is-selected
+		background-color: #f2f1eb !important
+	&__control--is-focused
+		border-color: #e2e1da !important
+		box-shadow: none !important

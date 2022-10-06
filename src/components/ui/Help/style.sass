@@ -1,0 +1,38 @@
+@import '_config'
+
+.hint
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 14px
+    height: 14px
+    border-radius: 50%
+    background: #e2e1da
+    cursor: help
+    margin: 0 0 0 5px
+    font: bold 10px/10px $systemFont
+    color: #556066
+    &:hover
+        .hint__desc
+          display: block
+
+    &__desc
+        text-transform: initial
+        transition: .3s ease
+        display: none
+        position: absolute
+        z-index: 1
+        background: #e2e1da
+        padding: 10px
+        border-radius: 4px
+        right: 0
+        top: 30%
+        font: normal 11px/120% $font
+        color: $color
+        max-width: 220px
+        width: 100%
+        
+        &.right
+            top: 20px
+            right: -100%
+            width: 150%

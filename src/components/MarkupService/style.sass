@@ -1,0 +1,242 @@
+@import '_config'
+
+#root
+	min-height: 100%
+
+.markup-layout
+	height: auto !important
+
+	&__logo
+		width: 160px
+		position: absolute
+		top: 40px
+		left: 40px
+		+max-width(1800)
+			position: relative
+			margin: 0 auto 60px
+			left: 0
+
+
+	&__bottomPanel
+		width: 100%
+		position: sticky
+		bottom: 0
+		display: flex
+		flex-direction: column
+		background: #FFFFFF
+
+		&-wrapper
+			max-width: $full-wrapper
+			width: 100%
+			margin: 0 auto
+
+		& .markup-estimate
+			height: 34px
+			padding: 10px 0 0 44px
+
+	&__modal
+		display: flex
+		flex-direction: column
+		align-items: center
+		width: 450px
+
+		&-title
+			font: normal 28px/125% $font
+			color: #3C3F48
+			margin-bottom: 10px
+
+		&-subtitle
+			font: normal 16px/150% $font
+			color: #3C3F48
+			margin-bottom: 40px
+
+		&-loader
+			z-index: 1
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			border: 5px solid #fff
+			border-top: 5px solid #00AFDD
+			animation: spin 2s linear infinite
+
+		&-button
+			height: 40px
+			display: flex
+			align-items: center
+			justify-content: center
+			font: normal 14px/15px $font
+			letter-spacing: 0.5px
+			border-radius: 3px
+			transition: .3s ease
+			padding: 0 24px
+			color: #00AFDD
+			background: #FFFFFF
+			border: 1px solid #00AFDD
+
+			&:hover
+				color: #fff
+				background: #00AFDD
+
+.main-block
+	display: flex
+	flex-direction: column
+	align-items: center
+	padding: 40px 0 0 0 !important
+	height: auto !important
+
+	&__wrapper
+		max-width: $wrapper
+		width: 100%
+		display: flex
+		flex-direction: column
+		flex: 1 0 auto
+		padding: 0 !important
+
+		&.click-copy
+			cursor: copy
+
+	&__row
+		display: flex
+		min-height: 700px
+		position: relative
+
+	&__badges
+		position: relative
+		display: flex
+		flex-direction: column
+		margin-left: 10px
+		&-container
+			position: absolute
+			display: flex
+			align-items: center
+
+		.badge
+			width: max-content
+			font: normal 10px/100% $font
+			color: #ffffff
+			position: relative
+			text-transform: uppercase
+			display: block
+			padding: 3px
+			border-radius: 2px
+			top: 0
+			transition: .3s ease
+			opacity: 1
+			cursor: pointer
+			margin-right: 5px
+			&.opacity
+				opacity: .3
+			&.active
+				opacity: 1
+			&:hover
+				opacity: 1
+			&--red
+				background-color: #f15454
+			&--blue
+				background-color: #65ace6
+			&--green
+				background-color: #97d159
+			&--hidden
+				display: none
+	&__page, &__result
+		&--windows
+			font: normal 16px/170% $font !important
+			.range
+				padding: 2px 0 !important
+
+	&__page, &__result
+		display: block
+		max-width: $width-page
+		width: 100%
+		height: fit-content
+		box-shadow: 0 0 10px 0 rgba(217, 226, 235, 0.5)
+		background-color: #ffffff
+		padding: 60px
+		font: normal 16px/150% $font
+		letter-spacing: normal
+		color: $text-color
+		white-space: pre-wrap
+		transition: .3s ease
+		+max-width($big-desktop)
+			padding: 40px
+			width: 60%
+			font: normal 14px/150% $font
+
+		&::selection,
+		mark::selection
+			background-color: rgba(212, 218, 222, 0.8)
+			color: #000
+
+		&.unselectable
+			pointer-events: none
+
+		mark
+			cursor: pointer
+			transition: .3s ease
+			&:hover
+				opacity: 0.85
+
+		.range
+			display: inline
+			position: relative
+			border-radius: 3px
+			box-shadow: inset 0 0 0 1px #bcc3c9
+			background-color: rgba(212, 218, 222, 0.8)
+			padding: 3px 0
+			transition: .3s ease
+
+			&.selected
+				opacity: 1
+				&:after, &:before
+					opacity: 1
+					z-index: 0
+
+			&.focused
+				&:after, &:before
+					opacity: 0
+
+			&--green
+				box-shadow: inset 0 0 0 1px #7bbc36
+				background-color: rgba(151, 209, 89, 0.5)
+				&.focused
+					background-color: rgba(151, 209, 89, 0.9)
+				.range-comment
+					color: #486b22
+
+			&--blue
+				box-shadow: inset 0 0 0 1px #4784b6
+				background-color: rgba(101, 172, 230, 0.5)
+				&.focused
+					background-color: rgba(101, 172, 230, 0.9)
+				.range-comment
+					color: #23415a
+
+			&--red
+				box-shadow: inset 0 0 0 1px #cf1515
+				background-color: rgba(241, 84, 84, 0.3)
+				&.focused
+					background-color: rgba(241, 84, 84, 0.7)
+				.range-comment
+					color: #581010
+
+			.range-comment
+				font: normal 13px/150% $systemFont
+				font-style: oblique
+				b
+					font-style: normal
+
+	.page-title
+		padding-left: 30px
+
+.meta-collapse
+	margin-bottom: 30px
+	&__trigger
+		font: normal 14px/130% $font
+		color: #00afdd
+		border-bottom: 1px dashed #00afdd
+		cursor: pointer
+	&__contentOuter
+		margin-top: 8px
+		font: normal 14px/150% $font
+
+

@@ -1,0 +1,72 @@
+@import '_config'
+
+.button
+	min-width: 220px
+	height: 40px
+	border-radius: 3px
+	position: relative
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	white-space: nowrap
+	text-transform: uppercase
+	font: 14px/107% $systemFont
+	letter-spacing: 0.5px
+	text-align: center
+	transition: background-color .3s, color .3s, border .3s
+	padding: 0 33px
+	+max-width($mobile)
+		min-width: 180px
+
+	&--blue
+		color: #fff
+		background-color: $blue
+
+		&:hover,
+		&:focus
+			background-color: $hover-blue
+
+	&--border,
+	&--white
+		color: $color
+		border: solid 2px $blue
+
+		&:hover
+			color: $white
+			background: $blue
+
+	&--orange
+		color: $orange
+		border: solid 2px currentColor
+		padding: 0 40px
+
+		&:hover,
+		&:focus
+			color: $hover-orange
+
+
+	&--lg
+		height: 50px
+		letter-spacing: 0.44px
+		font-size: 16px
+		+max-width($mobile)
+			height: 40px
+			letter-spacing: 0.5px
+			font-size: 14px
+			padding: 0 34px
+
+	&--sm
+		min-width: 100%
+		height: 28px
+		margin-bottom: 12px
+		font-size: 14px
+		line-height: 150%
+		text-transform: none
+		padding: 0 15px
+
+
+	&.disabled
+		cursor: default
+		pointer-events: none
+		color: #dadada
+		border-color: #dadada

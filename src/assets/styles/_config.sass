@@ -1,0 +1,191 @@
+// цвета
+// =====
+
+// основные цвета
+$text-color: #212223
+$color: #3c3f48
+
+// фоны
+$bg: #f8fafb
+$bg-dark: #000
+$bg-light: #f2f1eb
+
+// вспомогательные
+$blue: #00AFDD
+$error-pink: #f65d5d
+$hover-blue: darken($blue, 15)
+$white: #dfe3e6
+$blue-menu: #62c8d8
+$orange: #f59c00
+$hover-orange: lighten($orange, 20)
+$black-text: #000
+$grey-text: #798991
+$border-grey: #e0e3e4
+$border-light: #e2eaee
+$error: #f31e1e
+$input-grey: #c2c6c9
+$success: #00AFDD
+$green: #87c582
+
+// размеры
+// =======
+$width-side-panel: 260px
+$width-page: 864px
+$wrapper: 1340px
+$full-wrapper: 1400px
+
+// Осовные шрифты
+// ==============
+$font: "Stem", sans-serif
+$systemFont: Helvetica, 'Helvetica Neue', Arial, sans-serif
+
+
+// Экраны
+// ======
+$full-width: 1920
+$big-desktop: 1600
+$desktop: 1199
+$tablet: 991
+$mobile: 767
+$sm-mobile: 576
+$min-width: 320
+
+
+@mixin max-width($width)
+	@media only screen and (max-width: #{$width}px)
+		@content
+
+@mixin min-width($width)
+	@media only screen and (min-width: #{$width}px)
+		@content
+
+
+@mixin max-height($height)
+	@media only screen and (max-height: #{$height}px)
+		@content
+
+@mixin min-height($height)
+	@media only screen and (min-height: #{$height}px)
+		@content
+
+@mixin between-width($max, $min)
+	@media only screen and (max-width: #{$max}px) and (min-width: #{$min}px)
+		@content
+
+
+@mixin width($width)
+	min-width: $width
+	width: $width
+
+@mixin padding()
+	padding: 0 16px
+
+// https://habr.com/ru/company/mailru/blog/315196/
+// css-шлюзы
+@mixin lock($prop, $maxWidth, $minWidth, $maxValue, $minValue)
+	+between-width($maxWidth, $minWidth)
+		$m: ($maxValue - $minValue) / ($maxWidth - $minWidth)
+		$b: $maxValue - $m * $maxWidth
+		#{$prop}: calc(#{$m * 100}vw + #{$b}px)
+
+
+@mixin placeholder()
+	&::-webkit-input-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+	&:focus::-webkit-input-placeholder
+		opacity: 0
+	&:focus::-moz-placeholder
+		opacity: 0
+	&:focus:-moz-placeholder
+		opacity: 0
+	&:focus:-ms-input-placeholder
+		opacity: 0
+
+// формы
+// =====
+@mixin input-focus()
+	&:focus
+		border-color: $blue
+		box-shadow: inset 0 0 0 1px $blue
+
+@mixin input-hover()
+	&:hover
+		border-color: darken($input-grey, 15)
+		box-shadow: inset 0 0 0 1px transparent
+
+@mixin sign-input()
+	width: 100%
+	height: 50px
+	font: normal 18px/125% $systemFont
+	border-radius: 4px
+	border: solid 1px $input-grey
+	background-color: #fff
+	color: $color
+	padding: 5px 10px
+	transition: border-color .3s, box-shadow .3s
+	box-shadow: inset 0 0 0 1px transparent
+	+max-width($mobile)
+		height: 40px
+
+	+placeholder
+		font: normal 16px/40px $systemFont
+		color: #bababa
+		+max-width($mobile)
+			line-height: 30px
+
+
+	+input-hover
+	+input-focus
+
+	.sign-error &
+		border-color: $error
+		box-shadow: inset 0 0 0 1px $error
+		+input-focus
+
+
+@mixin sign-label()
+	font: normal 14px/150% $systemFont
+	color: $color
+	margin-bottom: 4px
+	+max-width($mobile)
+		font-size: 12px
+		margin-bottom: 0
+
+
+@mixin window-inner()
+	max-width: 416px
+	margin: 0 auto
+
+// layout
+// ======
+// todo: желательно добавить его в классы .my-markup
+//  /src/pages/MyNoMarkup/style.sass
+//  /src/pages/MyMarkup/style.sass
+
+@mixin layout-with-side-panel
+	flex: 1 0 auto
+	position: relative
+	&:after
+		content: ''
+		background-repeat: no-repeat
+		background-size: contain
+		display: inline-block
+		width: 317px
+		height: 80px
+		position: absolute
+		bottom: 0
+		right: 0
+		background-image: url("../../assets/img/svg/markup-page/fentiflushka.svg")
+
+@mixin main-textarea()
+	+sign-input
+
+	height: 150px
+	+max-width($mobile)
+		height: 150px

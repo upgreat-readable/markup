@@ -1,0 +1,175 @@
+body
+	background: #fff
+	font-family: $font
+	color: $color
+	height: 100%
+
+
+a
+	transition: opacity .3s, color .3s
+
+#root
+	display: flex
+	flex-direction: column
+	height: 100%
+
+
+.markup-layout
+	height: 100%
+	background: $bg
+
+
+.error-text
+	color: $error-pink
+
+.field
+	&__file-label
+		position: relative
+		cursor: pointer
+
+		&--attach
+			display: flex
+			align-items: center
+			color: $blue
+			font: normal 14px/150% $systemFont
+			transition: color .3s ease
+			width: 300px
+
+			&:hover
+				color: $hover-blue
+
+	&__item
+		&--file
+			width: 100%
+			height: 100%
+			opacity: 0
+			position: absolute
+			top: 0
+			left: 0
+			cursor: pointer
+
+
+	&__head
+		display: flex
+		align-items: center
+		margin: 0 0 25px
+
+	&__name
+		display: flex
+		align-items: flex-start
+		color: $black-text
+		font: normal 14px/150% $systemFont
+
+	&__del
+		cursor: pointer
+		color: $blue
+		font: normal 14px/150% $systemFont
+		transition: color .3s ease
+		margin: 0 0 0 20px
+
+		&:hover
+			color: $hover-blue
+.lk-info
+	margin-bottom: 30px
+
+.lk-text
+	line-height: 150%
+	max-width: 70%
+	margin-bottom: 20px
+
+	a
+		color: $blue
+
+		&:hover
+			color: $color
+
+.lk-links
+	display: flex
+	flex-direction: column
+	line-height: 150%
+	font-weight: 500
+
+
+	&__wrap
+		display: flex
+		align-items: center
+		margin-top: 10px
+
+		a
+			color: $blue
+			margin-right: 30px
+
+			&:hover
+				color: $color
+
+
+.button
+	min-width: 220px
+	height: 40px
+	border-radius: 3px
+	position: relative
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	white-space: nowrap
+	text-transform: uppercase
+	font: 14px/107% $systemFont
+	letter-spacing: 0.5px
+	text-align: center
+	transition: background-color .3s, color .3s, border .3s
+	padding: 0 33px
+	+max-width($mobile)
+		min-width: 180px
+
+	&--blue
+		color: #fff
+		background-color: $blue
+
+		&:hover,
+		&:focus
+			background-color: $hover-blue
+
+	&--border,
+	&--white
+		color: $color
+		border: solid 2px $blue
+
+		&:hover
+			color: $white
+			background: $blue
+
+	&--orange
+		color: $orange
+		border: solid 2px currentColor
+		padding: 0 40px
+
+		&:hover,
+		&:focus
+			color: $hover-orange
+
+
+	&--lg
+		height: 50px
+		letter-spacing: 0.44px
+		font-size: 16px
+		+max-width($mobile)
+			height: 40px
+			letter-spacing: 0.5px
+			font-size: 14px
+			padding: 0 34px
+
+	&--sm
+		min-width: 100%
+		height: 28px
+		margin-bottom: 12px
+		font-size: 14px
+		line-height: 150%
+		text-transform: none
+		padding: 0 15px
+
+
+	&.disabled
+		cursor: default
+		pointer-events: none
+		color: #dadada
+		border-color: #dadada

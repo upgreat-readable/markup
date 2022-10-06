@@ -1,0 +1,87 @@
+@import '_config'
+
+.bottom-service-panel
+	width: 100%
+	height: 60px
+	background: #ffffff
+	display: flex
+
+	&__wrapper
+		width: 100%
+		height: 100%
+		padding: 0 0 0 44px
+		display: flex
+		align-items: center
+		max-width: $wrapper
+		+max-width($big-desktop)
+			padding: 0 30px 0 44px
+
+	&__viewcode
+		display: flex
+		align-items: center
+		cursor: pointer
+		min-width: 190px
+		margin: 0 15px 0 0
+		transition: .3s ease
+
+		&:hover
+			opacity: 0.8
+
+		i
+			width: 25px
+			height: 25px
+			flex: 0 0 auto
+
+
+		&.code i
+			background: url('../../assets/img/svg/code.svg') no-repeat center / contain
+
+		&.mark i
+			background: url('../../assets/img/svg/markup-mode.svg') no-repeat center / contain
+
+		span
+			text-transform: uppercase
+			font: bold 12px/120% $font
+			letter-spacing: 0.8px
+			color: $color
+			margin-left: 10px
+
+	&__time
+		margin-left: auto
+		font: normal 16px/100% $font
+		color: $color
+		min-width: 320px
+		display: flex
+		align-items: center
+
+		strong
+			font: bold 24px/100% $font
+			margin-left: 20px
+
+	&__buttons
+		display: flex
+		margin-left: auto
+
+	&__btn
+		height: 40px
+		display: flex
+		align-items: center
+		justify-content: center
+		font: normal 14px/15px $font
+		letter-spacing: 0.5px
+		border-radius: 3px
+		transition: .3s ease
+		padding: 0 24px
+		margin-right: 12px
+		background: #00AFDD
+		color: #fff
+
+		&--outline
+			color: #00AFDD
+			background: #FFFFFF
+			border: 1px solid #00AFDD
+
+		&:hover
+			opacity: 0.8
+			cursor: pointer
+
