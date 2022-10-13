@@ -8,7 +8,7 @@ import './index.sass';
 import Logo from 'assets/img/svg/service/logo-dark.svg';
 
 const MarkupServicePage: FC = observer(() => {
-    const { repository } = useMarkupStore();
+    const { repository, markUp } = useMarkupStore();
     const [init, setInit] = useState<boolean>(false);
     const [fileContent, setFileContent] = useState<MarkupData>(null);
 
@@ -27,6 +27,7 @@ const MarkupServicePage: FC = observer(() => {
     };
 
     const handleClose = () => {
+        markUp.unsetSelection();
         setInit(false);
         setFileContent(null);
     };
