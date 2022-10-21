@@ -1,3 +1,4 @@
+// Библиотеки Каталога Ошибок модуля Разметчика в статичное представление
 import { MenuCategory } from '../domain/markup/entities/menu/menu.interface';
 
 export default {

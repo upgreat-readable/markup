@@ -76,6 +76,7 @@ const MarkupServicePage: FC = observer(() => {
             </div>
 
             <div className="markup-service__link">
+                {/*Ссылка на сайт Технологических конкурсов Up Great http://ai.upgreat.one/*/}
                 <a
                     href="https://ai.upgreat.one/"
                     target="_blank"
